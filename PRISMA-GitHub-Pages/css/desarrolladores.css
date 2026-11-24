@@ -1,0 +1,18 @@
+.developer-grid {
+      width: 100%;
+      max-width: 850px;
+      margin-inline: auto;
+    }
+
+    .developer {
+      grid-template-columns: 1fr;
+      width: 100%;
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    @media (max-width: 650px) {
+      .developer-grid {
+        max-width: 100%;
+      }
+    }

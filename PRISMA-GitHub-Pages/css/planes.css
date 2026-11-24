@@ -1,0 +1,327 @@
+.plans-page *,
+    .plans-page *::before,
+    .plans-page *::after {
+      box-sizing: border-box;
+    }
+
+    .plans-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 32px;
+    }
+
+    .plans-toolbar .eyebrow {
+      margin: 0;
+    }
+
+    .billing-control {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      padding: 5px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+    .billing-control button {
+      min-height: 44px;
+      padding: 10px 20px;
+      border: 0;
+      border-radius: 8px;
+      background: transparent;
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    .billing-control button[aria-pressed="true"] {
+      background: var(--green);
+      color: var(--white);
+    }
+
+    html[data-theme="dark"] .billing-control button[aria-pressed="true"] {
+      background: var(--gold);
+      color: var(--green);
+    }
+
+    .plans-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .plan-card {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      padding: clamp(22px, 2.5vw, 32px);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: var(--bg);
+    }
+
+    .plan-card:nth-child(even) {
+      background: var(--surface);
+    }
+
+    .plan-number {
+      display: grid;
+      place-items: center;
+      width: 36px;
+      height: 36px;
+      margin-bottom: 26px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .plan-card h2 {
+      margin: 0 0 12px;
+      font-size: clamp(1.3rem, 1.8vw, 1.65rem);
+      letter-spacing: -.035em;
+      overflow-wrap: anywhere;
+    }
+
+    .plan-users {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .plan-price {
+      margin: 28px 0 22px;
+      padding: 22px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .plan-price strong {
+      display: block;
+      font-size: clamp(1.9rem, 2.7vw, 2.8rem);
+      line-height: 1.2;
+      letter-spacing: -.05em;
+      overflow-wrap: anywhere;
+    }
+
+    .plan-price span {
+      display: block;
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .plan-card .btn {
+      width: 100%;
+      margin-top: auto;
+    }
+
+    .plan-price .price-line {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .plan-price .price-line + .price-line {
+      margin-top: 16px;
+    }
+
+    .plan-price .price-line strong {
+      font-size: clamp(1.25rem, 1.7vw, 1.7rem);
+      letter-spacing: -.035em;
+    }
+
+    .quote-section,
+    .institutional-section {
+      padding-top: 0;
+    }
+
+    .quote-panel,
+    .institutional-panel {
+      max-width: 1000px;
+      margin-inline: auto;
+      padding: clamp(24px, 4vw, 48px);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: var(--surface);
+    }
+
+    .quote-panel h2,
+    .institutional-panel h2 {
+      margin: 0 0 12px;
+    }
+
+    .quote-panel > p,
+    .institutional-panel > p {
+      color: var(--muted);
+    }
+
+    .quote-controls {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(180px, 240px);
+      gap: 18px 28px;
+      align-items: end;
+      margin: 28px 0;
+    }
+
+    .quote-controls label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 650;
+    }
+
+    .quote-range-wrap {
+      grid-column: 1 / -1;
+    }
+
+    .quote-range,
+    .quote-number {
+      width: 100%;
+      min-height: 48px;
+    }
+
+    .quote-range {
+      accent-color: var(--green);
+      touch-action: pan-y;
+    }
+
+    .quote-number {
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--bg);
+      color: var(--text);
+      font: inherit;
+    }
+
+    .quote-number:focus-visible,
+    .quote-range:focus-visible,
+    .billing-control button:focus-visible,
+    .quote-request:focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    .quote-limits {
+      display: flex;
+      justify-content: space-between;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .quote-results {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin: 24px 0;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--bg);
+    }
+
+    .quote-results p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .quote-results strong {
+      display: block;
+      margin-top: 5px;
+      color: var(--text);
+      font-size: 1.15rem;
+    }
+
+    .quote-results .quote-total strong {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+    }
+
+    .quote-results .quote-plan,
+    .quote-results .quote-savings {
+      grid-column: 1 / -1;
+    }
+
+    .quote-results [hidden] {
+      display: none;
+    }
+
+    .quote-error {
+      min-height: 1.5em;
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .quote-request {
+      width: 100%;
+    }
+
+    .quote-request[aria-disabled="true"] {
+      opacity: .55;
+      cursor: not-allowed;
+    }
+
+    .institutional-panel {
+      border-color: var(--gold);
+    }
+
+    .institutional-discounts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 22px 0;
+    }
+
+    .institutional-discounts span {
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    @media (max-width: 1190px) {
+      .plans-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 650px) {
+      .plans-toolbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .billing-control {
+        width: 100%;
+      }
+
+      .billing-control button {
+        flex: 1;
+      }
+
+      .plans-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+      }
+
+      .quote-controls,
+      .quote-results {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .quote-range-wrap,
+      .quote-results .quote-plan,
+      .quote-results .quote-savings {
+        grid-column: auto;
+      }
+
+      .quote-results {
+        padding: 18px;
+      }
+    }
